@@ -5,7 +5,8 @@
 The project contains environment configuration for database credentials, and overall execution setting. Just create a `.env` file within /availability-finder with necessary environment variables, which are:
 
 ##### POSTGRES SQL SERVER
-    - MAX_DATE=2024-02-16
+    - MAX_DATE=2024-02-14
+    - MIN_DATE=2024-02-14
     - DINNER_HOUR_MAX=23
     - DINNER_HOUR_MIN=20
     - LUNCH_HOUR_MAX=14
