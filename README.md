@@ -24,7 +24,7 @@ busqueda = {
 }
 ```
 #### Resultado de la búsqueda, Disponibilidad, Turno y Opciones de reserva
-![Resultado](.screenshot_restaurants_success.png)
+![Resultado](screenshot_restaurants_success.png)
 
 ## Process to execute
 
