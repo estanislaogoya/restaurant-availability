@@ -13,6 +13,18 @@ The project contains environment configuration for database credentials, and ove
     - LUNCH_HOUR_MIN=12
     - NUM_PEOPLE=2
     - SLEEP_TIME_IN_SEC=60
+    - CATEGORIA=GENERAL
+
+#### En settings pueden ver el mapa de categorias y listado de restaurants dentro
+```python
+busqueda = {
+    ('SUSHI'): restaurants_sushi,
+    ('PLATITOS'): restaurants_platitos,
+    ('GENERAL'): restaurants_general
+}
+```
+#### Resultado de la búsqueda, Disponibilidad, Turno y Opciones de reserva
+![Resultado](.screenshot_restaurants_success.png)
 
 ## Process to execute
 
