@@ -9,14 +9,58 @@ logger = logging.getLogger(__name__)
 
 load_dotenv()
 
-restaurants = {
+archive_rest = {
     'La Ferneteria Serrano' : '735',
     'La Ferneteria Bellas Artes' : '882',
-    'Anchoita' : '154',
     'Don Julio' : '25',
     'La Cabrera Palermo' : '60',
-    'El Preferido' : '186'
 }
+
+restaurants_general = {
+    'Anchoita' : '154',
+    'El Preferido' : '186',
+    'Anafe': '189',
+    'Corriente': '1283',
+    'Chila': '75',
+    'Mengano': '239',
+    'Roux': '753',
+    'Na Num': '531',
+    'Tora': '156',
+    'Reliquia': '1141',
+    'Mishiguene': '424',
+    'Crizia': '153',
+    'Bestia': '76',
+    'Alos': '259',
+    'Mudra': '326',
+    'Julia': '366',
+    'Nare': '1461',
+    'Sacro': '122',
+    'Franca': '1364'
+}
+
+restaurants_platitos = {
+    'Lardito' : '1095',
+    'Obrador' : '511',
+    'Chui': '670',
+    'Las Patriotas': '568'
+}
+
+restaurants_sushi = {
+    'Maru Omakase' : '1265',
+    'Kona Corner' : '1366',
+    'Uni Omakase': '1047',
+    'Lima Estilo Nikei (Pacheco)': '849',
+    'Nare': '1461'
+}
+
+busqueda = {
+    ('SUSHI'): restaurants_sushi,
+    ('PLATITOS'): restaurants_platitos,
+    ('GENERAL'): restaurants_general
+}
+
+restaurants = busqueda[os.getenv('CATEGORIA', 'GENERAL')]
+
 
 today_date = datetime.today().date()
 future_date = today_date + timedelta(days=5)

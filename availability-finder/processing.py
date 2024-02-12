@@ -76,9 +76,16 @@ def _process_hours(date_str, key, type, num_people):
             # logger.info(f"Response content: {rsp_json['center']}")
             for slot in rsp_obj['slots']:
                 if slot['type'] != 'No':
+                     
                      if is_within_hourly_threshold(slot['hour']):
-                        logger.info(f"\u2705 Availability on {date_str} for {num_people} people of type {slot['type']} at : {slot['hour']}")
-                        results.append(f"Availability on {date_str} for {num_people} people of type {slot['type']} at : {slot['hour']}")
+                        menus = []
+                        if 'menus' in slot:
+                            for menu in slot['menus']:
+                                if menu['disabled'] is False:
+                                    menus.append(menu['name'])
+                        
+                        logger.info(f"\u2705 Availability on {date_str} for {num_people} people of type {slot['type']} at : {slot['hour']}. Menus: {menus}")
+                        results.append(f"Availability on {date_str} for {num_people} people of type {slot['type']} at : {slot['hour']}. Menus: {menus}")
 
     return results
 
